@@ -15,8 +15,6 @@ class BasicTest(TestCase):
         self.client = Client()
         self.user = User.objects.create_user(self.username, 'tt@tt.com', \
             self.password)
-        #self.user.is_staff = True
-        #self.user.save()
     
     def login(self):
         login = self.client.login(username=self.username, \
