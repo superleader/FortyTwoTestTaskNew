@@ -8,6 +8,11 @@ class Person(models.Model):
     bio = models.TextField()
     contacts = models.CharField(max_length=50)
     
+    email = models.EmailField(null=True, blank=True)
+    skype = models.CharField(max_length=50, null=True, blank=True)
+    jabber = models.CharField(max_length=50, null=True, blank=True)
+    photo = models.ImageField(upload_to='assets/uploads')
+    
     def __unicode__(self):
         return "%s %s" % (self.name, self.surname)
     
