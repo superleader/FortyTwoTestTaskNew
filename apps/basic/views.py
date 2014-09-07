@@ -16,6 +16,7 @@ def requests(request):
     locations = Location.objects.all()[:10]
     return locals()
 
+
 @login_required
 @render_to('edit.html')
 def edit(request):
@@ -30,4 +31,9 @@ def edit(request):
     else:
         form = PersonForm(instance=Person.objects.get(pk=1))
     
-    return locals() 
+    return locals()
+
+
+@render_to('edit.html')
+def save(request):
+    return locals()
